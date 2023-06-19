@@ -17,13 +17,21 @@ public class StudentRepository {
         return "Student added sucessfully";
     }
 
-    public void deleteStudent(int admn) {
+    public String deleteStudent(int admn) {
+        if(manageDB.get(admn) == null) {
+            return null;
+        }
         manageDB.remove(admn);
+        return "Student Delete Successfully!";
     }
 
-    public void updateCourse(int admn, String newCourse) {
+    public String updateCourse(int admn, String newCourse) {
         Student st = manageDB.get(admn);
+        if(st == null) {
+            return null;
+        }
         st.setCourse(newCourse);
+        return "Course Update Successfully!";
     }
     public int getAge(){
         int cnt = 0;

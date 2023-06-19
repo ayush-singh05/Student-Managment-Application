@@ -17,13 +17,13 @@ public class StudentService {
 
     }
 
-    public void deleteStudent(int admn) {
-        studentRepo.deleteStudent(admn);
+    public String deleteStudent(int admn) {
+        return studentRepo.deleteStudent(admn);
     }
 
     public String updateCourse(int admn, String newCourse) {
-        studentRepo.updateCourse(admn,newCourse);
-        return  "Course update Successfully!";
+        return studentRepo.updateCourse(admn,newCourse);
+
     }
     public int getAge(){
         return studentRepo.getAge();
